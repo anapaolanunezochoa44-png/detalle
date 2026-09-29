@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&family=Pinyon+Script&display=swap');
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0d0614;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.font-romantic {
+    font-family: 'Pinyon Script', cursive;
+}
+
+/* Hot Wheels Gradient Text & Neon Glows */
+.hotwheels-gradient-text {
+    background: linear-gradient(180deg, #FFF600 0%, #FF0000 70%, #990000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(255, 68, 0, 0.6);
+}
+
+.hotwheels-gold-text {
+    background: linear-gradient(180deg, #FFE87C 0%, #E6B800 50%, #8A6D00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.neon-border-orange {
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5), inset 0 0 15px rgba(255, 102, 0, 0.3);
+    border: 2px solid #FF6600;
+}
+
+.neon-border-yellow {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    border: 2px solid #FFCC00;
+}
+
+/* Metallic Card Texture */
+.metallic-card {
+    background: linear-gradient(135deg, rgba(30, 20, 45, 0.9) 0%, rgba(15, 8, 25, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 102, 0, 0.3);
+}
+
+/* Track Stripe Pattern */
+.racing-stripes {
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 102, 0, 0.15),
+        rgba(255, 102, 0, 0.15) 20px,
+        transparent 20px,
+        transparent 40px
+    );
+}
+
+/* Flame Canvas Container */
+#flameCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Custom Pulse Animation */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(255, 68, 0, 0.4); transform: scale(1); }
+    50% { box-shadow: 0 0 35px rgba(255, 204, 0, 0.8); transform: scale(1.02); }
+}
+
+.pulse-button {
+    animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* Flip Cards */
+.perspective-1000 {
+    perspective: 1000px;
+}
+.transform-style-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.flipped {
+    transform: rotateY(180deg);
+}
+.backface-hidden {
+    backface-visibility: hidden;
+}
+
+/* Floating Images Canvas / Container */
+#floating-vehicles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.floating-item {
+    position: absolute;
+    pointer-events: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 5px 15px rgba(255, 102, 0, 0.4));
+    will-change: transform;
+}
+
+.floating-item:hover {
+    transform: scale(1.2) rotate(5deg) !important;
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.9));
+    z-index: 10;
+}
